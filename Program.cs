@@ -213,5 +213,45 @@ class Program
             Console.Write("\nAdd more items? (Y / N): ");
             continueShopping = Console.ReadLine().ToUpper().Trim();
         }
+
+        Console.Clear();
+        Console.WriteLine("======== Receipt ======");
+
+        if (cartCount == 0)
+        {
+            Console.WriteLine("Your cart is empty. No purchase was made.");
+            Console.WriteLine("========================================");
+            return;
+        }
+
+        double grandTotal = 0;
+
+        for (int i = 0; i < cartCount; i++)
+        {
+            CartItem item = cart[i];
+            double subtotal = item.Product.Price * item.Quantity;
+
+            Console.WriteLine(item.Product.Name + "\t x" + item.Quantity + "\t PHP " + item.Product.Price.ToString("F2") + "\t Subtotal: PHP " + subtotal.ToString("F2"));
+
+            grandTotal = grandTotal + subtotal;
+        }
+
+        Console.WriteLine("----------------------------------------");
+        Console.WriteLine("Grand Total:    PHP " + grandTotal.ToString("F2"));
+
+        if (grandTotal >= 5000)
+        {
+            double discountAmount = grandTotal * 0.10;
+            double finalTotal     = grandTotal - discountAmount;
+
+            Console.WriteLine("Discount (10%): PHP " + discountAmount.ToString("F2"));
+            Console.WriteLine("========================================");
+            Console.WriteLine("FINAL TOTAL:    PHP " + finalTotal.ToString("F2"));
+        }
+        else
+        {
+            Console.WriteLine("========================================");
+            Console.WriteLine("FINAL TOTAL:    PHP " + grandTotal.ToString("F2"));
+        }
     }
 }
