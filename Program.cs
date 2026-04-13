@@ -192,6 +192,26 @@ class Program
                Console.ReadKey();
                continue;
            }
+
+            if (existingIndex >= 0)
+            {
+                cart[existingIndex].Quantity = cart[existingIndex].Quantity + quantity;
+                selectedProduct.DeductStock(quantity);
+
+                Console.WriteLine("\nCart updated: " + selectedProduct.Name + " quantity is now " + cart[existingIndex].Quantity + ".");
+            }
+            else
+            {
+                cart[cartCount] = new CartItem(selectedProduct, quantity);
+                cartCount = cartCount + 1;
+                selectedProduct.DeductStock(quantity);
+
+                double itemTotal = selectedProduct.GetItemTotal(quantity);
+                Console.WriteLine("\nAdded to cart: " + selectedProduct.Name + " x" + quantity + " = PHP " + itemTotal.ToString("F2"));
+            }
+
+            Console.Write("\nAdd more items? (Y / N): ");
+            continueShopping = Console.ReadLine().ToUpper().Trim();
         }
     }
 }
