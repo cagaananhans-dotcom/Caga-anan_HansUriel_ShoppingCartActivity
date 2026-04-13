@@ -23,3 +23,5 @@ AI USAGE IN THIS PROJECT:
 • “Why am I getting an error with my variable not being declared?"
 
 • “How do I validate user input in C# using int.TryParse to avoid errors?”
+
+• “How do I prevent users from entering negative or zero values in C#?”
