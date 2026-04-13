@@ -11,3 +11,5 @@ PROGRESS:
 • Made changes in the syntax of requirements.
 
 AI USAGE IN THIS PROJECT:
+
+• “Why am I getting an error with my variable not being declared?"
