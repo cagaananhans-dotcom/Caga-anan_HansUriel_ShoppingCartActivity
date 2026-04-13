@@ -18,6 +18,8 @@ PROGRESS:
 
 • Added quantity input and prevention of duplicate entries.
 
+• Added a logic where you can’t buy more than the available stock and prevention of adding new items when cart is full.
+
 AI USAGE IN THIS PROJECT:
 
 • “Why am I getting an error with my variable not being declared?"
