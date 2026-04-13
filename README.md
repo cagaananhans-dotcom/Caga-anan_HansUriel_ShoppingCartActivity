@@ -10,6 +10,8 @@ PROGRESS:
 
 • Made changes in the syntax of requirements.
 
+• Added cart logic.
+
 AI USAGE IN THIS PROJECT:
 
 • “Why am I getting an error with my variable not being declared?"
