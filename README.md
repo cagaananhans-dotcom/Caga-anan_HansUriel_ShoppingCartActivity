@@ -24,6 +24,12 @@
 
 • Added discount check logic.
 
+• Finalized the displayed updated stocks after purchase.
+
+• Added the final message.
+
+• Shopping Cart System Finished.
+
 # Ai Usage in This Project
 
 • “Why am I getting an error with my variable not being declared?"
