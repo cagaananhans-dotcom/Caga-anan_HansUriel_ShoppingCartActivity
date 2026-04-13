@@ -18,6 +18,8 @@
 
 • Added a logic where you can’t buy more than the available stock and prevention of adding new items when cart is full.
 
+• Finalized the add to cart logic
+
 # Ai Usage in This Project
 
 • “Why am I getting an error with my variable not being declared?"
