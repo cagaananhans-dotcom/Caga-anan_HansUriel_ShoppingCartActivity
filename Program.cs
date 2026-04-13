@@ -37,7 +37,14 @@ class Product
 
     public bool HasEnoughStock(int quantity)
     {
-        return quantity <= Stock;
+        if (RemainingStock >= quantity)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     public void DeductStock(int quantity)
