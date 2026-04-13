@@ -1,6 +1,6 @@
 # Caga-anan_HansUriel_ShoppingCartActivity
 
-PROGRESS:
+# Progress
 
 • Completed the requirements for the project (Product class, Fields, and Methods).
 
@@ -20,7 +20,7 @@ PROGRESS:
 
 • Added a logic where you can’t buy more than the available stock and prevention of adding new items when cart is full.
 
-AI USAGE IN THIS PROJECT:
+# Ai Usage in This Project
 
 • “Why am I getting an error with my variable not being declared?"
 
