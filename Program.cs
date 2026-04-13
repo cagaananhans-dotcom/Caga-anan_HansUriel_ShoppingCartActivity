@@ -49,6 +49,6 @@ class Product
 
     public void DeductStock(int quantity)
     {
-        RemainingStock -= quantity;
+        RemainingStock = RemainingSock - quantity;
     }
 }
