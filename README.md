@@ -20,6 +20,8 @@
 
 • Finalized the add to cart logic.
 
+• Finalized the receipt generation.
+
 # Ai Usage in This Project
 
 • “Why am I getting an error with my variable not being declared?"
