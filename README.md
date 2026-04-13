@@ -16,6 +16,8 @@ PROGRESS:
 
 • Added main shopping loop, menu display, and product selection with validation.
 
+• Added quantity input and prevention of duplicate entries.
+
 AI USAGE IN THIS PROJECT:
 
 • “Why am I getting an error with my variable not being declared?"
