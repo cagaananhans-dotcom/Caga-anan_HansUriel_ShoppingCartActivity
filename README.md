@@ -6,6 +6,6 @@ PROGRESS:
 
 • Used a constructor for ease of data storing.
 
-AI USAGE IN THIS PROJECT:
+• Removed organized formatting as it looks complicated.
 
-• “How can I align product names and prices in C# console output so it looks organized?” (Cleaner output formatting)
+AI USAGE IN THIS PROJECT:
