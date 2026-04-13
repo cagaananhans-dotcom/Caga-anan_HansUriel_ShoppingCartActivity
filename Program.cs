@@ -17,8 +17,16 @@ class Product
 
     public void DisplayProduct()
     {
-        string stockLabel = RemainingStock == 0 ? "[OUT OF STOCK]" : $"Stock: {RemainingStock}";
-        Console.WriteLine($"  [{Id}] {Name,-22} PHP {Price,8:F2}   {stockLabel}");
+        if (RemainingStock == 0)
+        {
+            stockInfo = "[OUT OF STOCK]";
+        }
+        else
+        {
+            stockInfo = "Stock: " + RemainingStock;
+        }
+
+        Console.WriteLine("[" + Id + "] " + Name + "\t PHP" + Price.ToString("F2") + "\t " + stockInfo);
     }
 
     public double GetItemTotal(int quantity)
