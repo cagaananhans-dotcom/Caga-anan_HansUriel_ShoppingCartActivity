@@ -66,3 +66,22 @@ class CartItem
         Quantity = quantity;
     }
 }
+
+class Program
+{
+    static void Main()
+    {
+        Product[] menu = new Product[7];
+        menu[0] = new Product(1, "Chair", 1_500.00, 5);
+        menu[1] = new Product(2, "Table", 3_000.00, 3);
+        menu[2] = new Product(3, "Sofa", 10_000.00, 0);
+        menu[3] = new Product(4, "Bed", 15_000.00, 1);
+        menu[4] = new Product(5, "Bookshelf", 5_000.00, 4);
+        menu[5] = new Product(6, "Dresser", 7_500.00, 2);
+        menu[6] = new Product(7, "Lamp", 2_000.00, 6);
+
+        int maxCart = 5;
+        CartItem[] cart =  new CartItem[maxCart];
+        int cartCount = 0;
+    }
+}
