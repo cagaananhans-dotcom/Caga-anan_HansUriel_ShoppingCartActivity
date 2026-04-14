@@ -32,13 +32,22 @@
 
 # Problem
 
+• Encountered a problem with not properly declared variables. (SOLVED)
+
 • Encountered a problem with negative stocks where you could still buy even if the stock is less than you would purchase. (SOLVED)
 
 # AI Usage in This Project
 
 • “Why am I getting an error with my variable not being declared?"
+
 – Used it to determine errors when it comes to properly declaring variables, which I applied throughout my program.
+
 
 • “How do I validate user input in C# using int.TryParse to avoid errors?”
 
+– For implementing input validation using int.TryParse, ensuring that invalid inputs do not crash the program.
+
+
 • “How do I prevent users from entering negative or zero values in C#?”
+
+– For adding conditional checks (e.g., quantity <= 0) to apply valid input.
