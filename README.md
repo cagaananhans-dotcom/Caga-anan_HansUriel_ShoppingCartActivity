@@ -34,6 +34,8 @@
 
 • Made the Y/N validation stronger.
 
+• Separated the classes into different source code files.
+
 # Problem
 
 • Encountered a problem with not properly declared variables. (SOLVED)
@@ -41,6 +43,8 @@
 • Encountered a problem with negative stocks where you could still buy even if the stock is less than you would purchase. (SOLVED)
 
 • Encountered a problem with Y/N validation where it accepts any input except "Y" instead of "Y" and "N" only. (SOLVED)
+
+• "The code keeps Product, CartItem, and Program in a single Program.cs file." (SOLVED)
 
 # AI Usage in This Project
 
