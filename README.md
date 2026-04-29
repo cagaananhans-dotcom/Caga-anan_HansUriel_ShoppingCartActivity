@@ -40,6 +40,8 @@
 
 • Encountered a problem with negative stocks where you could still buy even if the stock is less than you would purchase. (SOLVED)
 
+• Encountered a problem with Y/N validation where it accepts any input except "Y" instead of "Y" and "N" only. (SOLVED)
+
 # AI Usage in This Project
 
 • “Why am I getting an error with my variable not being declared?"
@@ -55,3 +57,7 @@
 • “How do I prevent users from entering negative or zero values in C#?”
 
     – For adding conditional checks to apply valid input.
+
+• "Explain how separation of files when classes work in C#. Make it beginner-friendly."
+
+    - Used it as a guide for addressing my problem with classes being in the same source code.
