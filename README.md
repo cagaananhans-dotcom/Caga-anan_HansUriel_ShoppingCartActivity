@@ -1,4 +1,4 @@
-# Progress for ShoppingCartSystem
+# Progress
 
 • Completed the requirements for the project (Product class, Fields, and Methods).
 
@@ -29,8 +29,6 @@
 • Fixed the alignment of displayed messages.
 
 • Shopping Cart System Finished.
-
-# Progress for EnhancedShoppingCartSystem
 
 # Problem
 
