@@ -210,8 +210,20 @@ class Program
                 Console.WriteLine("\nAdded to cart: " + selectedProduct.Name + " x" + quantity + " = PHP " + itemTotal.ToString("F2"));
             }
 
-            Console.Write("\nAdd more items? (Y / N): ");
-            continueShopping = Console.ReadLine().ToUpper().Trim();
+            while (true)
+            {
+                Console.Write("\nAdd more items? (Y / N): ");
+                continueShopping = Console.ReadLine().ToUpper().Trim();
+            
+                if (continueShopping == "Y" || continueShopping == "N")
+                {
+                    break;
+                }
+            
+                Console.WriteLine("Invalid input. Please enter Y or N only.");
+                Console.WriteLine();
+                Console.WriteLine("------------------------------");
+            }
         }
 
         Console.Clear();
