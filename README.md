@@ -1,4 +1,4 @@
-# Progress
+# Progress for ShoppingCartSystem
 
 • Completed the requirements for the project (Product class, Fields, and Methods).
 
