@@ -32,6 +32,8 @@
 
 # Progress for EnhancedShoppingCartSystem
 
+• Made the Y/N validation stronger.
+
 # Problem
 
 • Encountered a problem with not properly declared variables. (SOLVED)
