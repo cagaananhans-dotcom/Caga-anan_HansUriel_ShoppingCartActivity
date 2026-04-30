@@ -80,6 +80,10 @@
 
 • Added the Order History Display system.
 
+• Finalized the functions for Utilities.
+
+• Enhance Shopping Cart System Finished.
+
 # Problem
 
 • Encountered a problem with not properly declared variables. (SOLVED)
@@ -90,7 +94,9 @@
 
 • "The code keeps Product, CartItem, and Program in a single Program.cs file." (SOLVED)
 
-• All shopping features were originally inside one large method. (NOT YET SOLVED)
+• All shopping features were originally inside one large method. (SOLVED)
+
+• Encountered a problem where error messages stack up, leaving the UI messy. (SOLVED)
 
 # AI Usage in This Project
 
