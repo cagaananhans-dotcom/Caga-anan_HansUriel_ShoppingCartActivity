@@ -562,5 +562,39 @@ namespace ShoppingCartSystem
             Console.WriteLine("\n'" + name + "' has been removed from your cart.");
             PressAnyKey();
         }
+
+        static void ClearCart()
+        {
+            Console.Clear();
+            PrintDivider('=', 46);
+            Console.WriteLine(CenterText("CLEAR CART", 46));
+            PrintDivider('=', 46);
+
+            if (cartCount == 0)
+            {
+                Console.WriteLine("\nYour cart is already empty.");
+                PressAnyKey();
+                return;
+            }
+
+            string confirm = AskYesNo("\nAre you sure you want to clear your entire cart?");
+
+            if (confirm == "Y")
+            {
+                for (int i = 0; i < cartCount; i++)
+                {
+                    cart[i].Product.RemainingStock += cart[i].Quantity;
+                    cart[i] = null;
+                }
+                cartCount = 0;
+                Console.WriteLine("Cart cleared successfully.");
+            }
+            else
+            {
+                Console.WriteLine("Clear cart cancelled.");
+            }
+ 
+            PressAnyKey();
+        }
     }
 }
