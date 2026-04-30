@@ -1,5 +1,3 @@
-using ShoppingCartSystem;
-
 namespace ShoppingCartSystem
 {
     public class CartItem
