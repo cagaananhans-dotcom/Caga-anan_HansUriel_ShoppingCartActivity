@@ -241,5 +241,36 @@ namespace ShoppingCartSystem
 
             PressAnyKey();
         }
+
+        static void SearchProduct()
+        {
+            Console.Clear();
+            PrintDivider('=', 62);
+            Console.WriteLine(CenterText("SEARCH PRODUCT", 62));
+            PrintDivider('=', 62);
+
+            Console.Write("\nEnter product name to search: ");
+            string keyword = Console.ReadLine().ToLower().Trim();
+
+            Console.WriteLine("\n--- Search Results for \"" + keyword + "\" ---");
+            Console.WriteLine(" " + "ID".PadRight(5) + "Name".PadRight(15) + "Price".PadRight(16) + "Stock".PadRight(16) + "Category");
+            PrintDivider('-', 62);
+
+            bool found = false;
+
+            for (int i = 0; i < menu.Length; i++)
+            {
+                if (menu[i].Name.ToLower().Contains(keyword))
+                {
+                    menu[i].DisplayProduct();
+                    found = true;
+                }
+            }
+
+            if (!found)
+                Console.WriteLine("  No products found matching \"" + keyword + "\".");
+ 
+            PressAnyKey();
+        }
     }
 }
