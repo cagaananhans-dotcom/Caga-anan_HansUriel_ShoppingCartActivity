@@ -60,6 +60,8 @@
 
 • Added the Cart Management Menu.
 
+• Added the ViewCart() function to view the products in the cart. It also check if cart has no items.
+
 # Problem
 
 • Encountered a problem with not properly declared variables. (SOLVED)
