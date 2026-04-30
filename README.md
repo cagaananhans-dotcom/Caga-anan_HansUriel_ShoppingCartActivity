@@ -48,6 +48,10 @@
 
 • Added the product catalog menu and shopping navigation.
 
+• Finalized the method that adds items to the cart.
+
+• Implemented the Product Catalog Display, Control of Cart Capacity, Product Selection Validation, Cancel Option, Product ID Range Validation, Stock Availability Validation, Quantity Validation, Prevention of Duplicate Cart Entries, Merging of Quantity Logic, Stock Deduction System, and Price Calculation to the AddItemToCart() method.
+
 # Problem
 
 • Encountered a problem with not properly declared variables. (SOLVED)
@@ -87,3 +91,7 @@
 • "How do I separate my shopping system features into methods to make my code cleaner and easier to maintain?"
 
     - Used this prompt as a guide to help me separate the methods that i used and will use in this project.
+
+• "When is the correct point to deduct product stock so inventory stays accurate and only updates after a successful add?"
+
+    - Used it for maintaining accurate inventory after adding items.
