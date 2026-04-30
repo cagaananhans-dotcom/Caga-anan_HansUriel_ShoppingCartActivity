@@ -513,5 +513,54 @@ namespace ShoppingCartSystem
             Console.WriteLine("\n" + selected.Product.Name + " quantity updated to " + newQty + ".");
             PressAnyKey();
         }
+
+        static void RemoveCartItem()
+        {
+            Console.Clear();
+            ViewCart();
+
+            if (cartCount == 0)
+            {
+                PressAnyKey();
+                return;
+            }
+
+            Console.Write("Enter cart item number to remove (or 0 to cancel): ");
+            string input = Console.ReadLine();
+
+            int itemNum;
+            if (!int.TryParse(input, out itemNum))
+            {
+                Console.Clear();
+                Console.WriteLine("Invalid input.");
+                PressAnyKey();
+                return;
+            }
+
+            if (itemNum == 0) return;
+
+            if (itemNum < 1 || itemNum > cartCount)
+            {
+                Console.Clear();
+                Console.WriteLine("Invalid cart number. Choose from 1 to " + cartCount + ".");
+                PressAnyKey();
+                return;
+            }
+
+            CartItem toRemove = cart[itemNum - 1];
+            string   name     = toRemove.Product.Name;
+
+            toRemove.Product.RemainingStock += toRemove.Quantity;
+
+            for (int i = itemNum - 1; i < cartCount - 1; i++)
+            {
+                cart[i] = cart[i + 1];
+            }
+            cart[cartCount - 1] = null;
+            cartCount--;
+
+            Console.WriteLine("\n'" + name + "' has been removed from your cart.");
+            PressAnyKey();
+        }
     }
 }
