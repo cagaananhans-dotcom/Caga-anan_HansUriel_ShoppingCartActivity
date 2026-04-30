@@ -3,7 +3,7 @@ namespace ShoppingCartSystem
     public class Product
     {
         public int Id;
-        public string Name;
+        public string Nam;
         public double Price;
         public int RemainingStock;
         public string Category;
