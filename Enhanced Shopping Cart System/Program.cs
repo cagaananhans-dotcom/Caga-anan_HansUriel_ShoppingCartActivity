@@ -58,5 +58,18 @@ namespace ShoppingCartSystem
                 }
             }
         }
+
+        static void ShowMainMenu()
+        {
+            Console.Clear();
+            Console.WriteLine("╔══════════════════════════════════════╗");
+            Console.WriteLine("║     SHOPPING CART SYSTEM  v2.0       ║");
+            Console.WriteLine("╠══════════════════════════════════════╣");
+            Console.WriteLine("║   1. Start Shopping                  ║");
+            Console.WriteLine("║   2. View Order History              ║");
+            Console.WriteLine("║   3. Exit                            ║");
+            Console.WriteLine("╚══════════════════════════════════════╝");
+            Console.Write("\nEnter your choice: ");
+        }
     }
 }
