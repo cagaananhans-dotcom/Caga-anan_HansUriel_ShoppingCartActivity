@@ -692,5 +692,29 @@ namespace ShoppingCartSystem
             Console.WriteLine("  Press any key to return to the Main Menu...");
             Console.ReadKey();
         }
+
+        static void ShowLowStockAlert()
+        {
+            bool anyLow = false;
+
+            for (int i = 0; i < menu.Length; i++)
+            {
+                if (menu[i].RemainingStock > 0 && menu[i].RemainingStock <= LOW_STOCK_LEVEL)
+                {
+                    if (!anyLow)
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine("  !! LOW STOCK ALERT !!");
+                        PrintDivider('-', 46);
+                        anyLow = true;
+                    }
+
+                    Console.WriteLine("  * " + menu[i].Name + " has only " + menu[i].RemainingStock + " stock(s) left!");
+                }
+            }
+
+            if (anyLow)
+                PrintDivider('-', 46);
+        }
     }
 }
