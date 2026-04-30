@@ -58,6 +58,8 @@
 
 • Finalized the Category Filtering system (with added "Show All" option).
 
+• Added the Cart Management Menu.
+
 # Problem
 
 • Encountered a problem with not properly declared variables. (SOLVED)
