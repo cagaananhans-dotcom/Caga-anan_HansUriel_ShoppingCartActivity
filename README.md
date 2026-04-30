@@ -46,6 +46,8 @@
 
 • Added the Main Menu.
 
+• Added the product catalog menu and shopping navigation.
+
 # Problem
 
 • Encountered a problem with not properly declared variables. (SOLVED)
@@ -55,6 +57,8 @@
 • Encountered a problem with Y/N validation where it accepts any input except "Y" instead of "Y" and "N" only. (SOLVED)
 
 • "The code keeps Product, CartItem, and Program in a single Program.cs file." (SOLVED)
+
+• "All shopping features were originally inside one large method." (NOT YET SOLVED)
 
 # AI Usage in This Project
 
@@ -79,3 +83,7 @@
 • "What functions can I use to cleanly format the output in C#?"
 
     - Helped me with formatting issues during the development of this program. More likely for future changes on this project as well.
+
+• "How do I separate my shopping system features into methods like to make my code cleaner and easier to maintain?"
+
+    - Used this prompt as a guide to help me separate the methods that i used and will use in this project.
