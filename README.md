@@ -38,6 +38,8 @@
 
 • Added a Category field to the Product.cs
 
+• Added a separate class file for Receipt generation.
+
 # Problem
 
 • Encountered a problem with not properly declared variables. (SOLVED)
