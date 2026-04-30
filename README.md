@@ -69,3 +69,7 @@
 • "Explain how separation of files when classes work in C#. Make it beginner-friendly."
 
     - Used it as a guide for addressing my problem with classes being in the same source code.
+
+• "What functions can I use to cleanly format the output in C#?"
+
+    - Helped me with formatting issues during the development of this program. More likely for future changes on this project as well.
