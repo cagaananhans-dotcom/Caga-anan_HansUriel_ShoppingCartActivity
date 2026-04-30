@@ -716,5 +716,40 @@ namespace ShoppingCartSystem
             if (anyLow)
                 PrintDivider('-', 46);
         }
+
+        static void ShowOrderHistory()
+        {
+            Console.Clear();
+            PrintDivider('=', 62);
+            Console.WriteLine(CenterText("ORDER HISTORY", 62));
+            PrintDivider('=', 62);
+
+            if (orderCount == 0)
+            {
+                Console.WriteLine("  No orders have been placed yet.");
+                PrintDivider('=', 62);
+                PressAnyKey();
+                return;
+            }
+
+            for (int i = 0; i < orderCount; i++)
+            {
+                Console.Write("  " + (i + 1) + ". ");
+                orderHistory[i].DisplaySummary();
+            }
+
+            PrintDivider('-', 62);
+            Console.Write("\nEnter order number to view full receipt (or 0 to go back): ");
+            string input = Console.ReadLine();
+
+            int choice;
+            if (int.TryParse(input, out choice) && choice >= 1 && choice <= orderCount)
+            {
+                Console.Clear();
+                orderHistory[choice - 1].DisplayReceipt();
+            }
+
+            PressAnyKey();
+        }
     }
 }
