@@ -76,6 +76,8 @@
 
 • Added the feature that checks inventory after purchase to trigger Low Stock Alert.
 
+• Added the function to trigger Low Stock Alert.
+
 # Problem
 
 • Encountered a problem with not properly declared variables. (SOLVED)
