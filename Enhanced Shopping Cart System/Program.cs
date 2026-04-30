@@ -751,5 +751,47 @@ namespace ShoppingCartSystem
 
             PressAnyKey();
         }
+
+        static int FindInCart(int productId)
+        {
+            for (int i = 0; i < cartCount; i++)
+            {
+                if (cart[i].Product.Id == productId)
+                    return i;
+            }
+            return -1;
+        }
+
+        static string AskYesNo(string question)
+        {
+            while (true)
+            {
+                Console.Write(question + " (Y/N): ");
+                string answer = Console.ReadLine().ToUpper().Trim();
+ 
+                if (answer == "Y" || answer == "N")
+                    return answer;
+ 
+                Console.Clear();
+                Console.WriteLine("  Invalid input. Please enter Y or N only.");
+            }
+        }
+
+        static void PressAnyKey()
+        {
+            Console.WriteLine("\nPress any key to continue...");
+            Console.ReadKey();
+        }
+
+        static void PrintDivider(char ch, int length)
+        {
+            Console.WriteLine(new string(ch, length));
+        }
+
+        static string CenterText(string text, int width)
+        {
+            int padding = (width - text.Length) / 2;
+            return new string(' ', padding) + text;
+        }
     }
 }
