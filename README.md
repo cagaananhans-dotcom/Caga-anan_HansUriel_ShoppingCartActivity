@@ -36,6 +36,8 @@
 
 • Separated the classes into different source code files.
 
+• Added a Category field to the Product.cs
+
 # Problem
 
 • Encountered a problem with not properly declared variables. (SOLVED)
