@@ -272,5 +272,46 @@ namespace ShoppingCartSystem
  
             PressAnyKey();
         }
+
+        static void FilterByCategory()
+        {
+            Console.Clear();
+            PrintDivider('=', 46);
+            Console.WriteLine(CenterText("FILTER BY CATEGORY", 46));
+            PrintDivider('=', 46);
+            Console.WriteLine("  1. Furniture");
+            Console.WriteLine("  2. Appliances");
+            Console.WriteLine("  3. Home Decor");
+            Console.WriteLine("  4. Show All");
+            Console.Write("\nEnter your choice: ");
+
+            string choice = Console.ReadLine();
+            string category;
+
+            if      (choice == "1") category = "Furniture";
+            else if (choice == "2") category = "Appliances";
+            else if (choice == "3") category = "Home Decor";
+            else if (choice == "4") category = "All";
+            else
+            {
+                Console.Clear();
+                Console.WriteLine("Invalid choice.");
+                PressAnyKey();
+                return;
+            }
+
+            string header = (category == "All") ? "All Products" : category;
+            Console.WriteLine("\n--- " + header + " ---");
+            Console.WriteLine(" " + "ID".PadRight(5) + "Name".PadRight(15) + "Price".PadRight(16) + "Stock".PadRight(16) + "Category");
+            PrintDivider('-', 62);
+
+            for (int i = 0; i < menu.Length; i++)
+            {
+                if (category == "All" || menu[i].Category == category)
+                    menu[i].DisplayProduct();
+            }
+
+            PressAnyKey();
+        }
     }
 }
