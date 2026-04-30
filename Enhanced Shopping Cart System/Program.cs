@@ -596,5 +596,101 @@ namespace ShoppingCartSystem
  
             PressAnyKey();
         }
+
+        static void Checkout()
+        {
+            Console.Clear();
+            PrintDivider('=', 62);
+            Console.WriteLine(CenterText("CHECKOUT SUMMARY", 62));
+            PrintDivider('=', 62);
+
+            ViewCart();
+
+            double grandTotal = 0;
+
+            for (int i = 0; i < cartCount; i++)
+                grandTotal += cart[i].Product.Price * cart[i].Quantity;
+
+            double discountAmount = 0;
+            double finalTotal     = grandTotal;
+
+            if (grandTotal >= DISCOUNT_MIN)
+            {
+                discountAmount = grandTotal * DISCOUNT_RATE;
+                finalTotal     = grandTotal - discountAmount;
+ 
+                Console.WriteLine("  ** 10% discount applied! You save PHP " + discountAmount.ToString("F2") + " **");
+            }
+
+            Console.WriteLine("\n  Final Total  : PHP " + finalTotal.ToString("F2"));
+            PrintDivider('-', 62);
+
+            double payment = 0;
+
+            while (true)
+            {
+                Console.Write("  Enter payment amount  : PHP ");
+                string payInput = Console.ReadLine().Trim();
+
+                if (!double.TryParse(payInput, out payment))
+                {
+                    Console.Clear();
+                    Console.WriteLine("  Invalid input. Please enter a valid numeric amount.");
+                    Console.WriteLine("  Final Total  : PHP " + finalTotal.ToString("F2"));
+                    PrintDivider('-', 62);
+                    continue;
+                }
+
+                if (payment < finalTotal)
+                {
+                    Console.Clear();
+                    Console.WriteLine("  Insufficient payment. Final total is PHP " + finalTotal.ToString("F2") + ". Please enter more.");
+                    Console.WriteLine("  Final Total  : PHP " + finalTotal.ToString("F2"));
+                    PrintDivider('-', 62);
+                    continue;
+                }
+
+                break;
+            }
+
+            double change = payment - finalTotal;
+
+            Console.WriteLine("  Change       : PHP " + change.ToString("F2"));
+
+            orderCount++;
+            string receiptNumber = orderCount.ToString("D4"); // e.g. "0001"
+            string dateAndTime   = DateTime.Now.ToString("MMMM dd, yyyy  h:mm tt");
+
+            CartItem[] snapshot = new CartItem[cartCount];
+            for (int i = 0; i < cartCount; i++)
+                snapshot[i] = cart[i];
+
+            Receipt receipt = new Receipt(
+                receiptNumber,
+                dateAndTime,
+                snapshot,
+                cartCount,
+                grandTotal,
+                discountAmount,
+                finalTotal,
+                payment,
+                change
+            );
+
+            orderHistory[orderCount - 1] = receipt;
+
+            for (int i = 0; i < cartCount; i++)
+                cart[i] = null;
+            cartCount = 0;
+
+            Console.Clear();
+            receipt.DisplayReceipt();
+
+            ShowLowStockAlert();
+
+            Console.WriteLine();
+            Console.WriteLine("  Press any key to return to the Main Menu...");
+            Console.ReadKey();
+        }
     }
 }
