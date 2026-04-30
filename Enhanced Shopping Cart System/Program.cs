@@ -427,5 +427,91 @@ namespace ShoppingCartSystem
  
             PrintDivider('=', 62);
         }
+
+        static void UpdateCartItem()
+        {
+            Console.Clear();
+            ViewCart();
+
+            if (cartCount == 0)
+            {
+                PressAnyKey();
+                return;
+            }
+
+            Console.Write("Enter cart item number to update (or 0 to cancel): ");
+            string input = Console.ReadLine();
+
+            int itemNum;
+            if (!int.TryParse(input, out itemNum))
+            {
+                Console.Clear();
+                Console.WriteLine("Invalid input. Please enter a number.");
+                PressAnyKey();
+                return;
+            }
+
+            if (itemNum == 0) return;
+
+            if (itemNum < 1 || itemNum > cartCount)
+            {
+                Console.Clear();
+                Console.WriteLine("Invalid cart number. Choose from 1 to " + cartCount + ".");
+                PressAnyKey();
+                return;
+            }
+
+            CartItem selected = cart[itemNum - 1];
+
+            Console.WriteLine("\nProduct      : " + selected.Product.Name);
+            Console.WriteLine("Current Qty  : " + selected.Quantity);
+            Console.WriteLine("Extra Stock  : " + selected.Product.RemainingStock + " more available");
+            Console.Write("\nEnter the NEW total quantity (or 0 to cancel): ");
+
+            string qInput = Console.ReadLine();
+            int newQty;
+
+            if (!int.TryParse(qInput, out newQty))
+            {
+                Console.Clear();
+                Console.WriteLine("Invalid input.");
+                PressAnyKey();
+                return;
+            }
+
+            if (newQty == 0) return;
+
+            if (newQty < 1)
+            {
+                Console.Clear();
+                Console.WriteLine("Quantity must be at least 1. Use 'Remove' to delete an item.");
+                PressAnyKey();
+                return;
+            }
+
+            int difference = newQty - selected.Quantity;
+
+            if (difference > 0)
+            {
+                if (!selected.Product.HasEnoughStock(difference))
+                {
+                    Console.Clear();
+                    Console.WriteLine("Not enough stock. Only " +
+                                      selected.Product.RemainingStock + " extra available.");
+                    PressAnyKey();
+                    return;
+                }
+                selected.Product.DeductStock(difference);
+            }
+            else if (difference < 0)
+            {
+                selected.Product.RemainingStock += (-difference);
+            }
+
+            selected.Quantity = newQty;
+ 
+            Console.WriteLine("\n" + selected.Product.Name + " quantity updated to " + newQty + ".");
+            PressAnyKey();
+        }
     }
 }
