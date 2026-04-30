@@ -6,13 +6,15 @@ namespace ShoppingCartSystem
         public string Name;
         public double Price;
         public int RemainingStock;
+        public string Category;
 
-        public Product(int id, string name, double price, int remainingStock)
+        public Product(int id, string name, double price, int remainingStock, string category)
         {
             Id = id;
             Name = name;
             Price = price;
             RemainingStock = remainingStock;
+            Category = category;
         }
 
         public void DisplayProduct()
@@ -20,38 +22,26 @@ namespace ShoppingCartSystem
             string stockInfo;
 
             if (RemainingStock == 0)
-            {
                 stockInfo = "[OUT OF STOCK]";
-            }
             else
-            {
                 stockInfo = "Stock: " + RemainingStock;
-            }
 
-            Console.WriteLine("[" + Id + "] " + Name.PadRight(12) + "PHP " + Price.ToString("F2").PadRight(12) + stockInfo);
+            Console.WriteLine(("[" + Id + "]").PadRight(5) + Name.PadRight(15) + ("PHP " + Price.ToString("F2")).PadRight(16) + stockInfo.PadRight(16) + "| " + Category);
         }
 
         public double GetItemTotal(int quantity)
         {
-            double total = Price * quantity;
-            return total;
+            return Price * quantity;
         }
 
         public bool HasEnoughStock(int quantity)
         {
-            if (RemainingStock >= quantity)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return RemainingStock >= quantity;
         }
 
         public void DeductStock(int quantity)
         {
-            RemainingStock = RemainingStock - quantity;
+            RemainingStock -= quantity;
         }
     }
 }
