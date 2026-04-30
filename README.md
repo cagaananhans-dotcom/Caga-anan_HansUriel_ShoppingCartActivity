@@ -40,6 +40,12 @@
 
 • Added a separate class file for Receipt generation.
 
+• Used const for declaring the value of the conditions so it cannot be changed during the program's execution.
+
+• Made the arrays (Product menu, Cart, Order History) static so it could be accessed by all methods that will be implemented in the project.
+
+• Added the Main Menu.
+
 # Problem
 
 • Encountered a problem with not properly declared variables. (SOLVED)
