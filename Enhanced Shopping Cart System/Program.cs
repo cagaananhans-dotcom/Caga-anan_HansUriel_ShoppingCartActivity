@@ -79,27 +79,27 @@ namespace ShoppingCartSystem
             while (shopping)
             {
                 Console.Clear();
-                PrintDivider('=', 62);
-                Console.WriteLine(CenterText("PRODUCT CATALOG", 62));
-                PrintDivider('=', 62);
+                PrintDivider('=', 64);
+                Console.WriteLine(CenterText("PRODUCT CATALOG", 64));
+                PrintDivider('=', 64);
 
                 Console.WriteLine(" " + "ID".PadRight(5) + "Name".PadRight(15) + "Price".PadRight(16) + "Stock".PadRight(16) + "Category");
-                PrintDivider('-', 62);
+                PrintDivider('-', 64);
 
                 for (int i = 0; i < menu.Length; i++)
                 {
                     menu[i].DisplayProduct();
                 }
 
-                PrintDivider('=', 62);
+                PrintDivider('=', 64);
                 Console.WriteLine(" Cart: " + cartCount + " / " + MAX_CART + " items");
-                PrintDivider('-', 62);
+                PrintDivider('-', 64);
                 Console.WriteLine("  1. Add Item to Cart");
                 Console.WriteLine("  2. Search Product by Name");
                 Console.WriteLine("  3. Filter by Category");
                 Console.WriteLine("  4. Manage Cart (View / Update / Remove / Checkout)");
                 Console.WriteLine("  5. Back to Main Menu");
-                PrintDivider('-', 62);
+                PrintDivider('-', 64);
                 Console.Write("\nEnter your choice: ");
 
                 string choice = Console.ReadLine();
@@ -138,15 +138,15 @@ namespace ShoppingCartSystem
         static void AddItemToCart()
         {
             Console.Clear();
-            PrintDivider('=', 62);
-            Console.WriteLine(CenterText("ADD ITEM TO CART", 62));
-            PrintDivider('=', 62);
+            PrintDivider('=', 64);
+            Console.WriteLine(CenterText("ADD ITEM TO CART", 64));
+            PrintDivider('=', 64);
 
             Console.WriteLine(" " + "ID".PadRight(5) + "Name".PadRight(15) + "Price".PadRight(16) + "Stock".PadRight(16) + "Category");
-            PrintDivider('-', 62);
+            PrintDivider('-', 64);
             for (int i = 0; i < menu.Length; i++)
                 menu[i].DisplayProduct();
-            PrintDivider('=', 62);
+            PrintDivider('=', 64);
 
             if (cartCount == MAX_CART)
             {
@@ -245,16 +245,16 @@ namespace ShoppingCartSystem
         static void SearchProduct()
         {
             Console.Clear();
-            PrintDivider('=', 62);
-            Console.WriteLine(CenterText("SEARCH PRODUCT", 62));
-            PrintDivider('=', 62);
+            PrintDivider('=', 64);
+            Console.WriteLine(CenterText("SEARCH PRODUCT", 64));
+            PrintDivider('=', 64);
 
             Console.Write("\nEnter product name to search: ");
             string keyword = Console.ReadLine().ToLower().Trim();
 
             Console.WriteLine("\n--- Search Results for \"" + keyword + "\" ---");
             Console.WriteLine(" " + "ID".PadRight(5) + "Name".PadRight(15) + "Price".PadRight(16) + "Stock".PadRight(16) + "Category");
-            PrintDivider('-', 62);
+            PrintDivider('-', 64);
 
             bool found = false;
 
@@ -303,7 +303,7 @@ namespace ShoppingCartSystem
             string header = (category == "All") ? "All Products" : category;
             Console.WriteLine("\n--- " + header + " ---");
             Console.WriteLine(" " + "ID".PadRight(5) + "Name".PadRight(15) + "Price".PadRight(16) + "Stock".PadRight(16) + "Category");
-            PrintDivider('-', 62);
+            PrintDivider('-', 64);
 
             for (int i = 0; i < menu.Length; i++)
             {
@@ -566,9 +566,9 @@ namespace ShoppingCartSystem
         static void ClearCart()
         {
             Console.Clear();
-            PrintDivider('=', 46);
-            Console.WriteLine(CenterText("CLEAR CART", 46));
-            PrintDivider('=', 46);
+            PrintDivider('=', 60);
+            Console.WriteLine(CenterText("CLEAR CART", 60));
+            PrintDivider('=', 60);
 
             if (cartCount == 0)
             {
