@@ -720,14 +720,14 @@ namespace ShoppingCartSystem
         static void ShowOrderHistory()
         {
             Console.Clear();
-            PrintDivider('=', 62);
-            Console.WriteLine(CenterText("ORDER HISTORY", 62));
-            PrintDivider('=', 62);
+            PrintDivider('=', 78);
+            Console.WriteLine(CenterText("ORDER HISTORY", 78));
+            PrintDivider('=', 78);
 
             if (orderCount == 0)
             {
                 Console.WriteLine("  No orders have been placed yet.");
-                PrintDivider('=', 62);
+                PrintDivider('=', 78);
                 PressAnyKey();
                 return;
             }
@@ -738,7 +738,7 @@ namespace ShoppingCartSystem
                 orderHistory[i].DisplaySummary();
             }
 
-            PrintDivider('-', 62);
+            PrintDivider('-', 78);
             Console.Write("\nEnter order number to view full receipt (or 0 to go back): ");
             string input = Console.ReadLine();
 
