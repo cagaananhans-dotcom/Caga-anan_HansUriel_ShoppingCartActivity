@@ -505,7 +505,7 @@ namespace ShoppingCartSystem
             }
             else if (difference < 0)
             {
-                selected.Product.RemainingStock += (-difference);
+                selected.Product.Restock(-difference);
             }
 
             selected.Quantity = newQty;
@@ -550,7 +550,7 @@ namespace ShoppingCartSystem
             CartItem toRemove = cart[itemNum - 1];
             string   name     = toRemove.Product.Name;
 
-            toRemove.Product.RemainingStock += toRemove.Quantity;
+            toRemove.Product.Restock(toRemove.Quantity);
 
             for (int i = itemNum - 1; i < cartCount - 1; i++)
             {
@@ -583,7 +583,7 @@ namespace ShoppingCartSystem
             {
                 for (int i = 0; i < cartCount; i++)
                 {
-                    cart[i].Product.RemainingStock += cart[i].Quantity;
+                    cart[i].Product.Restock(cart[i].Quantity);
                     cart[i] = null;
                 }
                 cartCount = 0;
