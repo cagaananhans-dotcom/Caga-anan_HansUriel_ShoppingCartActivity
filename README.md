@@ -45,7 +45,7 @@
 - Added the function to trigger low stock alert
 - Added the order history display system
 - Finalized the functions for utilities
-- Converted all public fields in `Product`, `CartItem`, and `Receipt` classes to follow encapsulation
+- Converted all public fields in `Product`, `CartItem`, and `Receipt` classes into properties to follow encapsulation
 - Used `private set` for read-only data and `set` for values that need updates
 - Added a dedicated `Restock()` method in `Product.cs` to handle stock restoration logic
 - Replaced direct stock manipulation in `Program.cs` with method-based
